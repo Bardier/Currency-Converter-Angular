@@ -1,7 +1,7 @@
 <header class="header">
-  <p *ngIf="loading">Loading...</p>
-  <p *ngIf="!loading">
-    1 EUR = <span>{{ EUR.rate }}</span> UAH / 1 USD =
-    <span>{{ USD.rate }}</span> UAH
+  <p *ngIf="currencyService.loading">Loading...</p>
+  <p *ngIf="!currencyService.loading">
+    1 EUR = <span>{{ currencyService.EUR.rate }}</span> UAH / 1 USD =
+    <span>{{ currencyService.USD.rate }}</span> UAH
   </p>
 </header>
