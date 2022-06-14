@@ -1,9 +1,12 @@
 <!-- todo Заменить подстановку значений с индекса на норм логику, пока не знаю как... -->
 
 <header class="header">
-  <p *ngIf="currencyService.loading">Loading...</p>
-  <p *ngIf="!currencyService.loading">
-    1 EUR = <span>{{ currencyService.allCurrencies[2].rate }}</span> UAH / 1 USD
-    = <span>{{ currencyService.allCurrencies[1].rate }}</span> UAH
-  </p>
+  <div class="header__wrapper">
+    <p class="logo">itop1000</p>
+    <p *ngIf="currencyService.loading">Loading...</p>
+    <p *ngIf="!currencyService.loading">
+      1 EUR = <span>{{ currencyService.allCurrencies[2].rate }}</span> UAH / 1
+      USD = <span>{{ currencyService.allCurrencies[1].rate }}</span> UAH
+    </p>
+  </div>
 </header>

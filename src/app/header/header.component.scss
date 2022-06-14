@@ -1,0 +1,22 @@
+.header {
+  background-color: #0975f0;
+  color: #e6ca55;
+
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 700;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}

@@ -1,59 +1,63 @@
-<div>
-  <input
-    id="in"
-    type="text"
-    placeholder="0.00"
-    [(ngModel)]="firstInput"
-    #firstInputCurrency
-    (keyup)="
-      onFirstIn(
-        firstInputCurrency.value,
-        firstSelectCurrency.value,
-        secondSelectCurrency.value
-      )
-    "
-  />
-  <select
-    #firstSelectCurrency
-    (change)="
-      onFirstIn(
-        firstInputCurrency.value,
-        firstSelectCurrency.value,
-        secondSelectCurrency.value
-      )
-    "
-  >
-    <option value="UAH">UAH</option>
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-  </select>
-</div>
-<div>
-  <input
-    type="text"
-    placeholder="0.00"
-    [(ngModel)]="secondInput"
-    #secondInputCurrency
-    (keyup)="
-      onSecondIn(
-        secondInputCurrency.value,
-        firstSelectCurrency.value,
-        secondSelectCurrency.value
-      )
-    "
-  />
-  <select
-    #secondSelectCurrency
-    (change)="
-      onSecondIn(
-        secondInputCurrency.value,
-        firstSelectCurrency.value,
-        secondSelectCurrency.value
-      )
-    "
-  >
-    <option value="UAH">UAH</option>
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
-  </select>
+<div class="bg-img"><h1 class="page-title">Конвертор валют</h1></div>
+
+<div class="calculator calculator__wrapper">
+  <div>
+    <input
+      id="in"
+      type="text"
+      placeholder="0.00"
+      [(ngModel)]="firstInput"
+      #firstInputCurrency
+      (keyup)="
+        onFirstIn(
+          firstInputCurrency.value,
+          firstSelectCurrency.value,
+          secondSelectCurrency.value
+        )
+      "
+    />
+    <select
+      #firstSelectCurrency
+      (change)="
+        onFirstIn(
+          firstInputCurrency.value,
+          firstSelectCurrency.value,
+          secondSelectCurrency.value
+        )
+      "
+    >
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
+  <div>
+    <input
+      type="text"
+      placeholder="0.00"
+      [(ngModel)]="secondInput"
+      #secondInputCurrency
+      (keyup)="
+        onSecondIn(
+          secondInputCurrency.value,
+          firstSelectCurrency.value,
+          secondSelectCurrency.value
+        )
+      "
+    />
+    <select
+      #secondSelectCurrency
+      (change)="
+        onSecondIn(
+          secondInputCurrency.value,
+          firstSelectCurrency.value,
+          secondSelectCurrency.value
+        )
+      "
+    >
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
 </div>
