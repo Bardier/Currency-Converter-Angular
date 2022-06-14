@@ -9,25 +9,27 @@
       [(ngModel)]="firstInput"
       #firstInputCurrency
       (keyup)="
-        onFirstIn(
+        onInput(
           firstInputCurrency.value,
           firstSelectCurrency.value,
-          secondSelectCurrency.value
+          secondSelectCurrency.value,
+          true
         )
       "
     />
     <select
       #firstSelectCurrency
       (change)="
-        onFirstIn(
+        onInput(
           firstInputCurrency.value,
           firstSelectCurrency.value,
-          secondSelectCurrency.value
+          secondSelectCurrency.value,
+          true
         )
       "
     >
+      <option value="USD" selected>USD</option>
       <option value="UAH">UAH</option>
-      <option value="USD">USD</option>
       <option value="EUR">EUR</option>
     </select>
   </div>
@@ -38,20 +40,22 @@
       [(ngModel)]="secondInput"
       #secondInputCurrency
       (keyup)="
-        onSecondIn(
+        onInput(
           secondInputCurrency.value,
           firstSelectCurrency.value,
-          secondSelectCurrency.value
+          secondSelectCurrency.value,
+          false
         )
       "
     />
     <select
       #secondSelectCurrency
       (change)="
-        onSecondIn(
-          secondInputCurrency.value,
+        onInput(
+          firstInputCurrency.value,
           firstSelectCurrency.value,
-          secondSelectCurrency.value
+          secondSelectCurrency.value,
+          true
         )
       "
     >
