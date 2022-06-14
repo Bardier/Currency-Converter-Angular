@@ -15,20 +15,16 @@ export class CurrencyService {
   public currencyArr: Currency[] = [];
 
   public loading: boolean = true;
-  public USD = {
-    cc: '',
-    exchangedate: '',
-    r030: 0,
-    rate: 0,
-    txt: '',
-  };
-  public EUR = {
-    cc: '',
-    exchangedate: '',
-    r030: 0,
-    rate: 0,
-    txt: '',
-  };
+
+  public allCurrencies = [
+    {
+      r030: 0,
+      txt: 'Гривна',
+      rate: 1,
+      cc: 'UAH',
+      exchangedate: '',
+    },
+  ];
 
   constructor(private httpRequest: HttpClient) {}
 
@@ -44,20 +40,14 @@ export class CurrencyService {
     this.fetchCurrency().subscribe(() => {
       this.loading = false;
 
-      this.currencyArr.forEach((el) => {
-        switch (el.cc) {
-          case 'USD':
-            this.USD = el;
-            this.USD.rate = +this.USD.rate.toFixed(2);
-            break;
-          case 'EUR':
-            this.EUR = el;
-            this.EUR.rate = +this.EUR.rate.toFixed(2);
-            break;
-
-          default:
-            break;
+      this.currencyArr.forEach((el, i) => {
+        if (el.cc === 'USD' || el.cc === 'EUR') {
+          this.allCurrencies.push(el);
         }
+      });
+
+      this.allCurrencies.forEach((el) => {
+        el.rate = +el.rate.toFixed(2);
       });
     });
   };

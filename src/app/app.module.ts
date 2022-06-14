@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { BodyComponent } from './body/body.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [AppComponent, HeaderComponent, BodyComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
